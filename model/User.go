@@ -11,3 +11,7 @@ type User struct {
 func (this *User) Outerfunc() {
 
 }
+
+func init() {
+	elaeagnus.RegisterModel(new(User))
+}
