@@ -2,3 +2,5 @@
 *.exe
 webapp
 
+# mac
+.DS_Store
