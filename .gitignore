@@ -4,3 +4,7 @@ webapp
 
 # mac
 .DS_Store
+
+# idea
+.idea/
+*.iml

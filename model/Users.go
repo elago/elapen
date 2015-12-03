@@ -7,11 +7,7 @@ import (
 type Users struct {
 	Id       int64
 	Username string
-	password string
-}
-
-func (this *Users) Outerfunc() {
-
+	Password string
 }
 
 func init() {

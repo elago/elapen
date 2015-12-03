@@ -3,6 +3,8 @@ package controller
 import (
 	"github.com/elago/ela"
 	"github.com/elago/orm"
+	"github.com/elago/webapp/model"
+	"github.com/gogather/com/log"
 )
 
 func F1(ctx ela.RequestContext) {
@@ -11,6 +13,9 @@ func F1(ctx ela.RequestContext) {
 }
 
 func F2(ctx ela.RequestContext) {
-	orm.TestQuery()
+	u := orm.TestQuery().(model.Users)
+	log.Pinkf("id: %d\n", u.Id)
+	log.Pinkf("username: %s\n", u.Username)
+	log.Pinkf("password: %s\n", u.Password)
 	ctx.Write("hello function 2")
 }
