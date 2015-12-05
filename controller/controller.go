@@ -5,11 +5,16 @@ import (
 	"github.com/elago/orm"
 	"github.com/elago/webapp/model"
 	"github.com/gogather/com/log"
+	"runtime"
 )
 
 func F1(ctx ela.RequestContext) {
 	orm.PrintModels()
+
 	ctx.Write("hello world")
+	ctx.Data["name"] = "lijun"
+	ctx.Data["id"] = -1
+	ctx.ServeTemplate("")
 }
 
 func F2(ctx ela.RequestContext) {
@@ -22,4 +27,13 @@ func F2(ctx ela.RequestContext) {
 	log.Pinkf("username: %s\n", u.Username)
 	log.Pinkf("password: %s\n", u.Password)
 	ctx.Write("hello function 2")
+
+	var mem runtime.MemStats
+	runtime.ReadMemStats(&mem)
+
+	log.Blueln(mem.Alloc)
+	log.Blueln(mem.TotalAlloc)
+	log.Blueln(mem.HeapAlloc)
+	log.Blueln(mem.HeapSys)
+
 }
