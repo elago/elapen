@@ -5,16 +5,19 @@ import (
 	"github.com/elago/orm"
 	"github.com/elago/webapp/model"
 	"github.com/gogather/com/log"
+	// "net/http"
 	"runtime"
 )
 
 func F1(ctx ela.RequestContext) {
-	orm.PrintModels()
+	// ctx.SetStatus(200)
+	// ctx.SetHeader("Content-Type", "text/html")
+	// ctx.Write("<h1>hello world</h1>")
 
-	ctx.Write("hello world")
+	ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
 	ctx.Data["id"] = -1
-	ctx.ServeTemplate("")
+	ctx.ServeTemplate("index.html")
 }
 
 func F2(ctx ela.RequestContext) {
