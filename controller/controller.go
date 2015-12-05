@@ -13,7 +13,11 @@ func F1(ctx ela.RequestContext) {
 }
 
 func F2(ctx ela.RequestContext) {
-	u := orm.TestQuery().(model.Users)
+	// u := orm.TestQuery().(model.Users)
+	// var u model.Users
+	u := model.Users{Id: 8}
+	orm.Get(&u)
+
 	log.Pinkf("id: %d\n", u.Id)
 	log.Pinkf("username: %s\n", u.Username)
 	log.Pinkf("password: %s\n", u.Password)
