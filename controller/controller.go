@@ -9,10 +9,14 @@ import (
 	"runtime"
 )
 
-func F1(ctx ela.RequestContext) {
+func F1(ctx ela.Context) {
 	// ctx.SetStatus(200)
 	// ctx.SetHeader("Content-Type", "text/html")
 	// ctx.Write("<h1>hello world</h1>")
+
+	method := ctx.GetMethod()
+
+	log.Pinkln(method)
 
 	ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
@@ -20,7 +24,7 @@ func F1(ctx ela.RequestContext) {
 	ctx.ServeTemplate("index.html")
 }
 
-func F2(ctx ela.RequestContext) {
+func F2(ctx ela.Context) {
 	// u := orm.TestQuery().(model.Users)
 	// var u model.Users
 	u := model.Users{Id: 8}
