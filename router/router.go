@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/elago/ela"
-	"github.com/elago/webapp/controller"
+	"github.com/elago/elapen/controller"
 )
 
 func init() {

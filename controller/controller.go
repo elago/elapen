@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/elago/ela"
+	"github.com/elago/elapen/model"
 	"github.com/elago/orm"
-	"github.com/elago/webapp/model"
 	"github.com/gogather/com/log"
 	// "net/http"
 	"runtime"
