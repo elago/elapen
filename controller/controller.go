@@ -5,8 +5,9 @@ import (
 	"github.com/elago/elapen/model"
 	"github.com/elago/orm"
 	"github.com/gogather/com/log"
-	// "net/http"
+	"net/http"
 	"runtime"
+	// "time"
 )
 
 func F1(ctx ela.Context) {
@@ -33,7 +34,13 @@ func F2(ctx ela.Context) {
 	log.Pinkf("id: %d\n", u.Id)
 	log.Pinkf("username: %s\n", u.Username)
 	log.Pinkf("password: %s\n", u.Password)
-	ctx.Write("hello function 2")
+
+	cookie := &http.Cookie{}
+	cookie.Name = "ela"
+	cookie.Value = "hello Rex Lee"
+	cookie.Domain = "127.0.0.1"
+
+	ctx.SetCookie(cookie)
 
 	var mem runtime.MemStats
 	runtime.ReadMemStats(&mem)
@@ -42,5 +49,7 @@ func F2(ctx ela.Context) {
 	log.Blueln(mem.TotalAlloc)
 	log.Blueln(mem.HeapAlloc)
 	log.Blueln(mem.HeapSys)
+
+	ctx.Write("hello function 2")
 
 }
