@@ -22,7 +22,7 @@ func F1(ctx ela.Context) {
 	ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
 	ctx.Data["id"] = -1
-	ctx.ServeTemplate("view/index.html")
+	ctx.ServeTemplate("index.html")
 }
 
 func F2(ctx ela.Context) {
