@@ -15,9 +15,9 @@ func F1(ctx ela.Context) {
 	// ctx.SetHeader("Content-Type", "text/html")
 	// ctx.Write("<h1>hello world</h1>")
 
-	method := ctx.GetMethod()
+	// method := ctx.GetMethod()
 
-	log.Pinkln(method)
+	// log.Pinkln(method)
 
 	ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
