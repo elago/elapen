@@ -19,7 +19,7 @@ func F1(ctx ela.Context) {
 
 	// log.Pinkln(method)
 
-	ctx.SetStatus(404)
+	// ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
 	ctx.Data["id"] = -1
 	ctx.ServeTemplate("index.html")
