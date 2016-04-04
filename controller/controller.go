@@ -53,3 +53,7 @@ func F2(ctx ela.Context) {
 	ctx.Write("hello function 2")
 
 }
+
+func F3(ctx ela.Context) {
+	panic("panic test")
+}
