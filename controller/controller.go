@@ -7,6 +7,7 @@ import (
 	"github.com/gogather/com/log"
 	"net/http"
 	"runtime"
+
 	// "time"
 )
 
@@ -22,6 +23,10 @@ func F1(ctx ela.Context) {
 	// ctx.SetStatus(404)
 	ctx.Data["name"] = "lijun"
 	ctx.Data["id"] = -1
+	// template.FuncMap["func1"] = func(test string)string {
+	// 	return "test in func1 | "+test
+	// }
+	
 	ctx.ServeTemplate("index.html")
 }
 
@@ -56,4 +61,8 @@ func F2(ctx ela.Context) {
 
 func F3(ctx ela.Context) {
 	panic("panic test")
+}
+
+func F4(ctx ela.Context) {
+	ctx.ServeTemplate("test.html")
 }

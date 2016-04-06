@@ -7,6 +7,8 @@
 <body>
 	{{template "inc/header.tpl"}}
 	hello {{.name}}! {{if eq .id -1}}below zero{{end}}
+
+	{{tplFunc "param"}}
 	
 </body>
 </html>
