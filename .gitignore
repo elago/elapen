@@ -8,3 +8,7 @@ elapen
 # idea
 .idea/
 *.iml
+
+# data
+*.sqlite
+

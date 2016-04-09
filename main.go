@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/codegangsta/cli"
 	"github.com/elago/elapen/cmd"
+	_ "github.com/elago/elapen/initial"
 	"os"
 )
 
