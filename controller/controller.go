@@ -11,7 +11,7 @@ func IndexCtrl(ctx ela.Context) {
 func F1(ctx ela.Context) {
 	ctx.Data["name"] = "lijun"
 	ctx.Data["id"] = -1
-	
+
 	ctx.ServeTemplate("index.html")
 }
 
@@ -28,12 +28,16 @@ func F4(ctx ela.Context) {
 }
 
 func F5(ctx ela.Context) {
-	ctx.Write("uri params mode")
+	title, err := ctx.GetURIParam("title")
+	if err != nil {
+		title = "err"
+	}
+	ctx.Write("uri params mode, @title: " + title)
 }
 
 func Error500(ctx ela.Context, err error) {
 	ctx.SetHeader("Content-Type", "text/html")
-	ctx.Write("服务器内部错误，以下是错误内容\n"+err.Error())
+	ctx.Write("服务器内部错误，以下是错误内容\n" + err.Error())
 	// ctx.ServeError(500, "500.html")
 }
 
