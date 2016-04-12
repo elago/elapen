@@ -27,6 +27,10 @@ func F4(ctx ela.Context) {
 	ctx.ServeTemplate("test.html")
 }
 
+func F5(ctx ela.Context) {
+	ctx.Write("uri params mode")
+}
+
 func Error500(ctx ela.Context, err error) {
 	ctx.SetHeader("Content-Type", "text/html")
 	ctx.Write("服务器内部错误，以下是错误内容\n"+err.Error())
