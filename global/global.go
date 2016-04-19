@@ -7,7 +7,8 @@ import (
 )
 
 var (
-	Config *ela.Config
-	Engine *xorm.Engine
-	GeoIP  *geoip2.Reader
+	Install bool
+	Config  *ela.Config
+	Engine  *xorm.Engine
+	GeoIP   *geoip2.Reader
 )

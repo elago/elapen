@@ -46,8 +46,8 @@ func initDbEngine() {
 
 	runMode := config.GetBoolDefault("_", "runmode", false)
 	if runMode {
-		global.Engine = engine
+		global.Engine.ShowSQL(true)
 	}
 
-	global.Engine.ShowSQL(true)
+	global.Engine = engine
 }
