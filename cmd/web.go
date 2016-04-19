@@ -15,6 +15,5 @@ var CmdWeb = cli.Command{
 }
 
 func webServ(c *cli.Context) {
-	ela.SetConfig("conf/app.ini")
 	ela.Run()
 }

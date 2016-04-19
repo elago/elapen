@@ -11,4 +11,5 @@ elapen
 
 # data
 *.sqlite
+*.mmdb
 
