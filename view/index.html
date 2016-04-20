@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>首页</title>
 </head>
 <body>
-	{{template "inc/header.tpl"
+	首页
+	{{template "inc/header.tpl"}}
 	hello {{.name}}! {{if eq .id -1}}below zero{{end}}
 
 	{{tplFunc "param"}}

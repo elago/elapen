@@ -13,9 +13,11 @@ var engine *xorm.Engine
 
 func initDbEngine() {
 	config := global.Config
-	engineType := config.GetStringDefault("_", "engine", "sqlite")
-
-	var err error
+	engineType, err := config.GetString("_", "engine")
+	// if engine not define, it's install mode, skip database engine initial
+	if err != nil {
+		return
+	}
 
 	if engineType == "mysql" {
 		username := config.GetStringDefault("mysql", "username", "root")
@@ -39,7 +41,7 @@ func initDbEngine() {
 		if err != nil {
 			log.Redln(err)
 		} else {
-			log.Greenf("use mysql ")
+			log.Greenf("use sqlite ")
 			log.Bluef("%s\n", dsn)
 		}
 	}

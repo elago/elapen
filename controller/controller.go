@@ -2,17 +2,29 @@ package controller
 
 import (
 	"github.com/elago/ela"
+	"github.com/elago/elapen/global"
 )
+
+func Before(ctx ela.Context) {
+	if global.Install {
+		ctx.Redirect("/install")
+	}
+}
+
+func Install(ctx ela.Context) {
+	ctx.ServeTemplate("install.html")
+}
 
 func IndexCtrl(ctx ela.Context) {
 	ctx.ServeTemplate("index.html")
 }
 
 func F1(ctx ela.Context) {
-	ctx.Data["name"] = "lijun"
-	ctx.Data["id"] = -1
+	//ctx.Data["name"] = "lijun"
+	//ctx.Data["id"] = -1
 
-	ctx.ServeTemplate("index.html")
+	ctx.Write("page F1")
+	//ctx.ServeTemplate("index.html")
 }
 
 func F2(ctx ela.Context) {

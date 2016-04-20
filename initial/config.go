@@ -13,7 +13,14 @@ func initConfig() {
 		global.Install = false
 	} else {
 		global.Install = true
+		configForInstall()
 	}
 
 	global.Config = ela.GetConfig()
+}
+
+func configForInstall() {
+	config := ela.GetConfig()
+	config.SetInt("_", "port", 3001)
+	config.SetString("_", "runmode", "dev")
 }
