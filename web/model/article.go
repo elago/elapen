@@ -8,7 +8,6 @@ type Article struct {
 	Id       int64
 	Title    string `xorm:"varchar(255)"`
 	Uri      string `xorm:"varchar(255)"`
-	Keywords string `xorm:"varchar(1000)"`
 	Abstract string `xorm:"text"`
 	Content  string `xorm:"text"`
 	Author   int64

@@ -1,19 +1,12 @@
 package initial
 
 import (
-	"github.com/elago/elapen/global"
-	"github.com/elago/elapen/model"
-	"github.com/elago/elapen/router"
+	"github.com/elago/elapen/web/blog"
 )
 
 func init() {
 	initConfig()
-
-	if !global.Install {
-		initDbEngine()
-		initGeoIP()
-		model.InitModel()
-	}
-
-	router.InitRouter()
+	initDbEngine()
+	initGeoIP()
+	blog.InitWeb()
 }

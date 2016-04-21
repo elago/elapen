@@ -3,8 +3,8 @@ package cmd
 import (
 	"github.com/codegangsta/cli"
 	"github.com/elago/ela"
-	_ "github.com/elago/elapen/model"
-	_ "github.com/elago/elapen/router"
+	_ "github.com/elago/elapen/web/model"
+	_ "github.com/elago/elapen/web/router"
 )
 
 var CmdWeb = cli.Command{

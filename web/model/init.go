@@ -10,6 +10,8 @@ func InitModel() {
 	engine.Sync2(new(Article))
 	engine.Sync2(new(File))
 	engine.Sync2(new(Project))
+	engine.Sync2(new(Keyword))
 	engine.Sync2(new(Artifact))
+	engine.Sync2(new(ArticleKeyword))
 	engine.Sync2(new(Log))
 }
