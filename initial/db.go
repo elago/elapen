@@ -15,7 +15,7 @@ func initDbEngine() {
 	config := global.Config
 	engineType, err := config.GetString("_", "engine")
 	// if engine not define, it's install mode, skip database engine initial
-	if err != nil {
+	if err != nil || global.Install {
 		return
 	}
 
@@ -46,8 +46,8 @@ func initDbEngine() {
 		}
 	}
 
-	runMode := config.GetBoolDefault("_", "runmode", false)
-	if runMode {
+	runMode := config.GetStringDefault("_", "runmode", "prod")
+	if runMode == "dev" {
 		global.Engine.ShowSQL(true)
 	}
 

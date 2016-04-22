@@ -5,7 +5,7 @@ import (
 )
 
 func Install(ctx ela.Context) {
-	ctx.ServeTemplate("install.html")
+	ctx.ServeTemplate("install/install.html")
 }
 
 func InstallSystem(ctx ela.Context) {

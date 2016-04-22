@@ -9,6 +9,10 @@ import (
 var db *geoip2.Reader
 
 func initGeoIP() {
+	if global.Install {
+		return
+	}
+
 	var err error
 	config := global.Config
 	path, err := config.GetString("GeoIP", "path")

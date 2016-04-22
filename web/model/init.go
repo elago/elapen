@@ -6,6 +6,10 @@ import (
 
 func InitModel() {
 	engine := global.Engine
+	if engine == nil {
+		return
+	}
+
 	engine.Sync2(new(User))
 	engine.Sync2(new(Article))
 	engine.Sync2(new(File))

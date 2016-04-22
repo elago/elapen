@@ -13,7 +13,7 @@ func InitRouter() {
 	ela.BeforeController(controller.Before)
 
 	ela.InstallRouter("/install", install.Install)
-	ela.InstallRouter("/install", install.InstallSystem)
+	ela.InstallRouter("/install/start", install.InstallSystem)
 
 	ela.Router("/", blog.IndexCtrl)
 
